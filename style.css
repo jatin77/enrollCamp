@@ -140,7 +140,7 @@ main .activity {
   display: flex;
   flex-direction: column;
   color: #f8f8ff;
-  padding: 20px;
+  padding: 10px;
 }
 
 .contact {
@@ -179,6 +179,11 @@ footer .watermark {
 @media(max-width:600px) {
   main img {
     width: 100px;
+
+  }
+
+  .activity {
+    font-size: 15px;
 
   }
 }
