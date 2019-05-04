@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Registration Form</title>
+  </head>
+
+  <body>
+    <!-------------------------section 1----------------------->
+    <section class="hero-page">
+      <div class="form-box">
+        <!------------------alertBox-------->
+        <div class="alertBx "></div>
+        <!----------------------alertBx end------->
+        <!--------------------form----->
+        <form
+          class="enrollForm"
+          action="https://formspree.io/navurana5@gmail.com"
+          method="POST"
+        >
+          <input type="text" placeholder="Name" class="name" />
+          <input type="number" placeholder="Age" class="age" />
+          <input type="number" placeholder="Phone Number" class="phone" />
+          <input type="text" placeholder="Medical issue if any" class="med" />
+          <input type="submit" value="Enroll" />
+        </form>
+        <!----------------------form end----->
+      </div>
+    </section>
+    <!-------------------------section 1 end----------------------->
+    <!-------------------------section 2----------------------->
+    <section class="about-section">
+      <header>
+        <h1>Join <span class="highlight">Summer Camp</span> 2019</h1>
+      </header>
+      <main>
+        <!-------------------karate------------------>
+        <div class="martial-arts activity">
+          <img src="martial-arts.png" alt="" />
+          <h1>Karate</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
+            explicabo harum commodi id quo aut voluptatum, debitis esse vitae,
+          </p>
+        </div>
+          <!-------------------karate end------------------>
+          <!-------------------computer------------------>
+        <div class="computer activity">
+          <img src="technical-support.png" alt="" />
+          <h1>Computer</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
+            explicabo harum commodi id quo aut voluptatum, debitis esse vitae,
+          </p>
+        </div>
+          <!-------------------computer end------------------>
+      </main>
+      <!------------------contact--------------->
+      <div class="contact">
+        <h1>Get in touch with us</h1>
+        <p>navurana5@gmail.com</p>
+      </div>
+       <!------------------contact end--------------->
+    </section>
+     <!-------------------------section 2 end----------------------->
+     <!-----------------------------footer---------->
+    <footer>
+      <p>
+        <small>&copy; <span class="watermark">Acid</span> 2019</small>
+      </p>
+    </footer>
+    <!-----------------------------footer end---------->
+    <!--------------------------------SCRIPT------------------->
+    <script>
+      //variables
+      const form = document.querySelector('.enrollForm');
+      const alertBx = document.querySelector('.alertBx');
+      const name = document.querySelector('.name');
+      const age = document.querySelector('.age');
+      const phone = document.querySelector('.phone');
+      //function
+      function validation(e) {
+        //validate
+
+        if (name.value === '' || age.value === '' || phone.value === '') {
+          const alert = document.createElement('div');
+          alertBx.classList.add('active');
+          alert.textContent = 'Enter valid details';
+          alertBx.appendChild(alert);
+          e.preventDefault();
+          setTimeout(function() {
+            alertBx.removeChild(alert);
+            alertBx.classList.remove('active');
+          }, 3000);
+        }
+      }
+
+      //events
+      form.addEventListener('submit', validation);
+    </script>
+    <!------------------------------------script end---------->
+  </body>
+</html>
